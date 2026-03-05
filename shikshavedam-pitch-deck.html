@@ -78,7 +78,7 @@
 
   .slide-1 .hero-text .line1 {
     font-family: 'Playfair Display', serif;
-    font-size: 72px;
+    font-size: 64px;
     color: #FFFFFF;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -168,7 +168,7 @@
   }
 
   /* ══════════════════════════════════════════
-     SLIDE 3 — Compliance Burden
+     SLIDE 3 — Workflow Fragmentation
      ══════════════════════════════════════════ */
   .slide-3 {
     background: #F5F0E8;
@@ -226,36 +226,17 @@
   .doc-card .doc-title { font-weight: 700; font-size: 14px; color: #0D5C2F; }
   .doc-card .doc-meta { font-size: 12px; color: #6B6560; margin-top: 2px; }
 
-  .slide-3 .timeline-bar {
+  .slide-3 .stat-line {
     position: absolute;
-    bottom: 0;
-    left: 0; right: 80px;
-    display: flex;
-    align-items: center;
-    gap: 0;
+    bottom: 40px;
+    left: 80px; right: 80px;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 14px;
     color: #6B6560;
-  }
-  .timeline-segment {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .timeline-dot {
-    width: 10px; height: 10px;
-    background: #1B8C4E;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .timeline-line {
-    width: 60px; height: 2px;
-    background: #CCC;
-    flex-shrink: 0;
   }
 
   /* ══════════════════════════════════════════
-     SLIDE 4 — Why ERPs Fail
+     SLIDE 4 — Module 1: Communication & Flagging
      ══════════════════════════════════════════ */
   .slide-4 {
     background: #FFFFFF;
@@ -273,14 +254,14 @@
   .slide-4 .comparison {
     display: flex;
     gap: 40px;
-    margin-top: 48px;
-    height: 420px;
+    margin-top: 40px;
+    height: 370px;
   }
 
   .slide-4 .comp-card {
     flex: 1;
     border-radius: 10px;
-    padding: 36px 32px;
+    padding: 32px 28px;
     display: flex;
     flex-direction: column;
   }
@@ -300,13 +281,6 @@
     color: #6B6560;
     margin-bottom: 12px;
   }
-  .comp-card .comp-names {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #1A1A1A;
-    margin-bottom: 20px;
-  }
   .comp-card .comp-item {
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
@@ -317,7 +291,7 @@
   .comp-card .comp-item.no { color: #CC3333; }
   .comp-card .comp-tag {
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: 16px;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-style: italic;
@@ -329,8 +303,17 @@
     color: #0D5C2F;
   }
 
+  .slide-4 .metrics-row {
+    position: absolute;
+    bottom: 36px;
+    left: 80px; right: 80px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: #1B8C4E;
+  }
+
   /* ══════════════════════════════════════════
-     SLIDE 5 — Our Solution
+     SLIDE 5 — Module 2: Teacher Efficiency Engine
      ══════════════════════════════════════════ */
   .slide-5 {
     background: #1A1A1A;
@@ -342,146 +325,214 @@
     position: absolute; inset: 0; overflow: hidden; opacity: 0.12;
   }
 
+  .slide-5 .content-wrap {
+    display: flex;
+    gap: 48px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+
+  .slide-5 .left-content {
+    flex: 0 0 52%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .slide-5 .section-label {
     font-family: 'DM Sans', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 14px;
     color: #1B8C4E;
-    position: relative;
-    z-index: 1;
   }
 
-  .slide-5 .modules {
-    display: flex;
-    gap: 24px;
-    margin-top: 36px;
-    position: relative;
-    z-index: 1;
-    height: 460px;
+  .slide-5 .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-top: 16px;
   }
 
-  .module-card {
-    background: #222222;
-    border-radius: 10px;
-    padding: 32px 28px;
-    border-top: 4px solid #1B8C4E;
+  .slide-5 .slide-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: #999;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 480px;
+  }
+
+  .slide-5 .hero-metric {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    color: #A8D84E;
+    margin-top: 28px;
+  }
+
+  .slide-5 .supporting-metric {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #6B6560;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  .slide-5 .right-visual {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 32px;
   }
-  .module-card:nth-child(1) { flex: 0 0 35%; }
-  .module-card:nth-child(2) { flex: 0 0 35%; }
-  .module-card:nth-child(3) { flex: 1; }
 
-  .module-card .mod-num {
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
+  /* Stacked bar chart */
+  .bar-chart-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: #6B6560;
     margin-bottom: 8px;
   }
-  .module-card .mod-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-    margin-bottom: 16px;
-  }
-  .module-card .mod-body {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: #999;
-    line-height: 1.6;
-    flex: 1;
-  }
-  .module-card .mod-metric {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid #333;
-    font-family: 'Space Mono', monospace;
-    font-size: 16px;
-    color: #A8D84E;
-    line-height: 1.4;
+
+  .stacked-bar {
+    display: flex;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
   }
 
-  .slide-5 .bottom-note {
-    position: absolute;
-    bottom: 32px;
-    left: 80px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+  .bar-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: #FFFFFF;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .bar-segment.grey { background: #444; }
+  .bar-segment.green { background: #1B8C4E; }
+  .bar-segment.green-bright { background: #A8D84E; color: #1A1A1A; }
+
+  .bar-segment-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
     color: #6B6560;
-    z-index: 1;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .bar-legend {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+
+  .bar-legend-row {
+    display: flex;
+    width: 100%;
+  }
+
+  .bar-legend-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: #6B6560;
+    text-align: center;
   }
 
   /* ══════════════════════════════════════════
-     SLIDE 6 — Market Opportunity
+     SLIDE 6 — The Outcome Chain
      ══════════════════════════════════════════ */
   .slide-6 {
     background: #0D5C2F;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 80px;
-    gap: 80px;
   }
 
-  .slide-6 .left-col {
-    flex: 0 0 340px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .slide-6 .big-num {
-    font-family: 'Space Mono', monospace;
-    font-size: 110px;
-    color: #A8D84E;
-    line-height: 1;
-    letter-spacing: -0.04em;
-  }
-  .slide-6 .big-label {
+  .slide-6 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 40px;
     color: #FFFFFF;
-    margin-top: 12px;
-    line-height: 1.3;
+    letter-spacing: -0.02em;
+    text-align: center;
+    line-height: 1.2;
   }
 
-  .slide-6 .right-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .funnel-bar {
-    height: 52px;
-    border-radius: 6px;
+  .outcome-chain {
     display: flex;
     align-items: center;
-    padding: 0 24px;
+    gap: 0;
+    margin-top: 56px;
+  }
+
+  .chain-block {
+    border-radius: 8px;
+    padding: 20px 24px;
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
-    color: #FFFFFF;
-    font-weight: 500;
+    font-weight: 600;
+    text-align: center;
+    min-width: 180px;
+    line-height: 1.4;
   }
-  .funnel-bar:nth-child(1) { width: 100%; background: rgba(255,255,255,0.12); }
-  .funnel-bar:nth-child(2) { width: 78%; background: rgba(255,255,255,0.18); }
-  .funnel-bar:nth-child(3) { width: 56%; background: rgba(255,255,255,0.25); }
-  .funnel-bar:nth-child(4) { width: 42%; background: #A8D84E; color: #0D5C2F; font-weight: 700; }
 
-  .slide-6 .supporting {
-    position: absolute;
-    bottom: 40px;
-    right: 80px;
+  .chain-block.level-1 { background: rgba(255,255,255,0.08); border: 2px solid rgba(168,216,78,0.3); color: #FFFFFF; }
+  .chain-block.level-2 { background: rgba(255,255,255,0.12); border: 2px solid rgba(168,216,78,0.45); color: #FFFFFF; }
+  .chain-block.level-3 { background: rgba(255,255,255,0.18); border: 2px solid rgba(168,216,78,0.6); color: #FFFFFF; }
+  .chain-block.level-4 { background: #A8D84E; border: 2px solid #A8D84E; color: #1A1A1A; }
+
+  .chain-arrow {
     font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    color: #A8D84E;
+    padding: 0 16px;
+    flex-shrink: 0;
+  }
+
+  .outcome-metrics {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    text-align: center;
+  }
+
+  .outcome-metric-group h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  .outcome-metric-group p {
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     color: rgba(255,255,255,0.55);
-    text-align: right;
-    line-height: 1.8;
+    line-height: 1.6;
+  }
+
+  .slide-6 .bottom-note {
+    position: absolute;
+    bottom: 40px;
+    left: 80px; right: 80px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #A8D84E;
+    text-align: center;
   }
 
   /* ══════════════════════════════════════════
-     SLIDE 7 — The Sell
+     SLIDE 7 — Proof Plan
      ══════════════════════════════════════════ */
   .slide-7 {
     background: #F5F0E8;
@@ -495,49 +546,51 @@
     letter-spacing: -0.02em;
   }
 
-  .slide-7 .insight-box {
-    margin-top: 40px;
-    background: #FFFFFF;
-    border-left: 5px solid #1B8C4E;
-    border-radius: 0 8px 8px 0;
-    padding: 28px 36px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
-    font-style: italic;
-    color: #1A1A1A;
-    line-height: 1.6;
-    max-width: 900px;
-  }
-
-  .slide-7 .value-chain {
-    margin-top: 56px;
+  .proof-cards {
     display: flex;
-    align-items: center;
-    gap: 0;
-  }
-  .value-step {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: #1A1A1A;
-    line-height: 1.4;
-    max-width: 220px;
-  }
-  .value-arrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 28px;
-    color: #1B8C4E;
-    padding: 0 20px;
-    flex-shrink: 0;
+    gap: 32px;
+    margin-top: 48px;
   }
 
-  .slide-7 .pricing-note {
-    position: absolute;
-    bottom: 40px;
-    left: 80px;
+  .proof-card {
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 36px 32px;
+    border-top: 4px solid #1B8C4E;
+  }
+
+  .proof-card .proof-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 48px;
+    color: #0D5C2F;
+    line-height: 1.1;
+  }
+
+  .proof-card .proof-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1A1A1A;
+    margin-top: 16px;
+  }
+
+  .proof-card .proof-desc {
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     color: #6B6560;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  .slide-7 .proof-footer {
+    position: absolute;
+    bottom: 40px;
+    left: 80px; right: 80px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #6B6560;
+    font-style: italic;
   }
 
   /* ══════════════════════════════════════════
@@ -587,9 +640,15 @@
     position: relative; z-index: 1;
     letter-spacing: 0.01em;
   }
-  .slide-8 .close-stats .stat-sep { color: #6B6560; padding: 0 16px; }
+  .slide-8 .cta {
+    margin-top: 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: #A8D84E;
+    position: relative; z-index: 1;
+  }
   .slide-8 .contact {
-    margin-top: 40px;
+    margin-top: 24px;
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     color: #6B6560;
@@ -618,11 +677,11 @@
   </div>
   <div class="brand">शिक्षा वेदम्</div>
   <div class="hero-text">
-    <div class="line1">Beyond ERP.</div>
+    <div class="line1">ShikshaVedam</div>
     <div class="line2">The AI Operating System</div>
-    <div class="line3">for India's Schools.</div>
+    <div class="line3">for School Outcomes</div>
   </div>
-  <div class="subline">36,000 CBSE City Private Schools · ₹2K–₹25K/month fee band</div>
+  <div class="subline">Urban private schools · ₹2K–₹25K/month fee band</div>
 
   <!-- Isometric School Building — CSS/SVG -->
   <div class="iso-school">
@@ -697,91 +756,70 @@
   <span class="slide-number">02</span>
 </section>
 
-<!-- ════════════════ SLIDE 3 — Compliance Burden ════════════════ -->
+<!-- ════════════════ SLIDE 3 — Workflow Fragmentation ════════════════ -->
 <section class="slide-3" style="position:relative;">
   <div class="accent-line-top"></div>
   <div class="left-col">
-    <h2>The Compliance Machine</h2>
-    <p>CBSE schools face double governance — state + CBSE. The paperwork never stops.</p>
+    <h2>Teaching gets eaten by coordination.</h2>
+    <p>The root cause isn't lazy teachers or bad curriculum. It's operational chaos between stakeholders — messaging, admin, interruptions, and zero visibility across layers.</p>
   </div>
   <div class="right-col">
     <div class="doc-card">
-      <div class="doc-title">UDISE+ DCF</div>
-      <div class="doc-meta">33 pages · 241+ mandatory fields</div>
+      <div class="doc-title">WhatsApp Groups</div>
+      <div class="doc-meta">Unstructured · Always-on</div>
     </div>
     <div class="doc-card">
-      <div class="doc-title">SQAA Framework</div>
-      <div class="doc-meta">84 standards · 336 marks · 6–8 month effort</div>
+      <div class="doc-title">Phone Calls</div>
+      <div class="doc-meta">Unlogged · No audit trail</div>
     </div>
     <div class="doc-card">
-      <div class="doc-title">Assessment Uploads</div>
-      <div class="doc-meta">Fixed window · No corrections allowed</div>
+      <div class="doc-title">Paper Registers</div>
+      <div class="doc-meta">Duplicated · Hardcopy + softcopy</div>
     </div>
     <div class="doc-card">
-      <div class="doc-title">Affiliation Renewal</div>
-      <div class="doc-meta">Annual cycle · Documentation intensive</div>
+      <div class="doc-title">Google Chat</div>
+      <div class="doc-meta">Per-student threads · Principal in every one</div>
     </div>
     <div class="doc-card">
-      <div class="doc-title">State Recognition</div>
-      <div class="doc-meta">Recurring · Separate from CBSE</div>
+      <div class="doc-title">CBSE Circulars</div>
+      <div class="doc-meta">Manual routing · Lost in forwarding</div>
     </div>
   </div>
 
-  <!-- Timeline bar -->
-  <div style="position:absolute; bottom:40px; left:80px; right:80px; display:flex; align-items:center; gap:12px;">
-    <span class="timeline-dot" style="width:10px;height:10px;background:#1B8C4E;border-radius:50%;flex-shrink:0;"></span>
-    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#6B6560;">Jan–Mar: UDISE+</span>
-    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
-    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#1B8C4E;font-weight:700;">→</span>
-    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
-    <span class="timeline-dot" style="width:10px;height:10px;background:#1B8C4E;border-radius:50%;flex-shrink:0;"></span>
-    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#6B6560;">Apr–Dec: SQAA</span>
-    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
-    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#1B8C4E;font-weight:700;">→</span>
-    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
-    <span class="timeline-dot" style="width:10px;height:10px;background:#1B8C4E;border-radius:50%;flex-shrink:0;"></span>
-    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#6B6560;">Jan–Feb: Uploads</span>
-  </div>
+  <div class="stat-line">Management finds out 12–24 months late. By then, the damage is done.</div>
 
   <span class="slide-number">03</span>
 </section>
 
-<!-- ════════════════ SLIDE 4 — Why ERPs Fail ════════════════ -->
+<!-- ════════════════ SLIDE 4 — Module 1: Communication & Flagging ════════════════ -->
 <section class="slide-4" style="position:relative;">
   <div class="accent-line-top" style="background:transparent;"></div>
-  <h2>ERP is the entry ticket.<br>Not the product.</h2>
+  <h2>Module 1: Communication that routes itself.</h2>
   <div class="comparison">
     <div class="comp-card existing">
-      <div class="comp-label">What Exists</div>
-      <div class="comp-names">Fedena · Teachmint · MyClassboard</div>
-      <div class="comp-item yes">Fee collection ✓</div>
-      <div class="comp-item yes">Attendance ✓</div>
-      <div class="comp-item yes">Report cards ✓</div>
-      <div style="height:16px"></div>
-      <div class="comp-item no">AI insights ✗</div>
-      <div class="comp-item no">Compliance automation ✗</div>
-      <div class="comp-item no">Communication intelligence ✗</div>
-      <div class="comp-item no">Teacher efficiency ✗</div>
-      <div class="comp-tag">Commoditized. Race to the bottom.</div>
+      <div class="comp-label">Today</div>
+      <div class="comp-item no">Everything routes through the principal</div>
+      <div class="comp-item no">Parents message on WhatsApp at all hours</div>
+      <div class="comp-item no">Issues surface 12–24 months late</div>
+      <div class="comp-item no">No escalation logic — everything feels urgent</div>
+      <div class="comp-item no">Zero audit trail on communication</div>
+      <div class="comp-tag">Noise. Bottlenecks. Blind spots.</div>
     </div>
     <div class="comp-card ours">
-      <div class="comp-label">ShikshaVedam</div>
-      <div class="comp-names">AI-First School OS</div>
-      <div class="comp-item yes">Fee collection ✓</div>
-      <div class="comp-item yes">Attendance ✓</div>
-      <div class="comp-item yes">Report cards ✓</div>
-      <div style="height:16px"></div>
-      <div class="comp-item yes">CBSE workflow integration ✓</div>
-      <div class="comp-item yes">Principal dependency reduction ✓</div>
-      <div class="comp-item yes">Actionable AI insights ✓</div>
-      <div class="comp-item yes">Compliance automation ✓</div>
-      <div class="comp-tag">AI-first. Built for CBSE ops.</div>
+      <div class="comp-label">With ShikshaVedam</div>
+      <div class="comp-item yes">AI priority routing to the right stakeholder</div>
+      <div class="comp-item yes">Structured channels replace chaotic threads</div>
+      <div class="comp-item yes">Real-time visibility for management</div>
+      <div class="comp-item yes">Auto-triage: urgent vs routine vs informational</div>
+      <div class="comp-item yes">Full communication audit trail</div>
+      <div class="comp-tag">Signal. Accountability. Speed.</div>
     </div>
   </div>
+  <div class="metrics-row">12–24 mo → Real-time visibility · % messages auto-triaged · Median time-to-resolution tracked in-product</div>
   <span class="slide-number">04</span>
 </section>
 
-<!-- ════════════════ SLIDE 5 — Our Solution ════════════════ -->
+<!-- ════════════════ SLIDE 5 — Module 2: Teacher Efficiency Engine ════════════════ -->
 <section class="slide-5">
   <div class="geo-bg">
     <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
@@ -793,68 +831,144 @@
       <rect width="1280" height="720" fill="url(#hexGrid)"/>
     </svg>
   </div>
-  <div class="section-label">Intelligent Governance</div>
-  <div class="modules">
-    <div class="module-card">
-      <div class="mod-num">01</div>
-      <div class="mod-title">Communication &amp; Flagging</div>
-      <div class="mod-body">AI priority routing. Every stakeholder sees only what's relevant. Parents, teachers, and management get filtered, actionable signals — not noise.</div>
-      <div class="mod-metric">12–24 mo → Real-time</div>
+  <div class="content-wrap">
+    <div class="left-content">
+      <div class="section-label">MODULE 02</div>
+      <div class="slide-title">Turn teaching back into the default.</div>
+      <div class="slide-body">AI-driven curriculum planning: annual → monthly → weekly, across 5–6 subjects per teacher. Automates attendance, recap prompts, and homework distribution — systematically reclaiming classroom minutes.</div>
+      <div class="hero-metric">18 min → 28+ min teaching per lesson</div>
+      <div class="supporting-metric">Weekly planning hours reduced · Lesson plan automation across subjects · Measured via product telemetry + teacher diaries</div>
     </div>
-    <div class="module-card">
-      <div class="mod-num">02</div>
-      <div class="mod-title">Teacher Efficiency Engine</div>
-      <div class="mod-body">AI curriculum planning: annual → monthly → weekly across 5–6 subjects. Optimises the 40-minute lesson by automating non-teaching tasks.</div>
-      <div class="mod-metric">18 min → 28+ min teaching</div>
-    </div>
-    <div class="module-card">
-      <div class="mod-num">03</div>
-      <div class="mod-title">Low-Friction Digitisation</div>
-      <div class="mod-body">Bridges paper to digital without adding workload. Phased rollout respects existing habits. Foundation that enables Modules 1 &amp; 2.</div>
-      <div class="mod-metric">Zero added teacher workload</div>
+    <div class="right-visual">
+      <!-- TODAY bar -->
+      <div>
+        <div class="bar-chart-label">Today</div>
+        <div class="stacked-bar">
+          <div class="bar-segment grey" style="width:5%;">
+            <span style="font-size:8px;">2</span>
+          </div>
+          <div class="bar-segment grey" style="width:5%;background:#555;">
+            <span style="font-size:8px;">2</span>
+          </div>
+          <div class="bar-segment grey" style="width:25%;background:#3a3a3a;">
+            <span style="font-size:9px;">10</span>
+          </div>
+          <div class="bar-segment grey" style="width:12.5%;background:#4a4a4a;">
+            <span style="font-size:9px;">5</span>
+          </div>
+          <div class="bar-segment grey" style="width:7.5%;background:#555;">
+            <span style="font-size:8px;">3</span>
+          </div>
+          <div class="bar-segment green" style="width:45%;">
+            <span style="font-size:11px;font-weight:700;">18 min</span>
+          </div>
+        </div>
+        <div style="display:flex;margin-top:4px;">
+          <div class="bar-segment-label" style="width:5%;">Att.</div>
+          <div class="bar-segment-label" style="width:5%;">Rec.</div>
+          <div class="bar-segment-label" style="width:25%;">Walkthrough</div>
+          <div class="bar-segment-label" style="width:12.5%;">HW</div>
+          <div class="bar-segment-label" style="width:7.5%;">Trans.</div>
+          <div class="bar-segment-label" style="width:45%;color:#1B8C4E;">Teaching</div>
+        </div>
+      </div>
+
+      <!-- WITH SHIKSHAVEDAM bar -->
+      <div>
+        <div class="bar-chart-label">With ShikshaVedam</div>
+        <div class="stacked-bar">
+          <div class="bar-segment grey" style="width:2.5%;">
+            <span style="font-size:7px;">1</span>
+          </div>
+          <div class="bar-segment grey" style="width:2.5%;background:#555;">
+            <span style="font-size:7px;">1</span>
+          </div>
+          <div class="bar-segment grey" style="width:10%;background:#3a3a3a;">
+            <span style="font-size:8px;">4</span>
+          </div>
+          <div class="bar-segment grey" style="width:5%;background:#4a4a4a;">
+            <span style="font-size:8px;">2</span>
+          </div>
+          <div class="bar-segment grey" style="width:10%;background:#555;">
+            <span style="font-size:8px;">4</span>
+          </div>
+          <div class="bar-segment green-bright" style="width:70%;">
+            <span style="font-size:13px;font-weight:700;">28+ min</span>
+          </div>
+        </div>
+        <div style="display:flex;margin-top:4px;">
+          <div class="bar-segment-label" style="width:2.5%;">A</div>
+          <div class="bar-segment-label" style="width:2.5%;">R</div>
+          <div class="bar-segment-label" style="width:10%;">Walk.</div>
+          <div class="bar-segment-label" style="width:5%;">HW</div>
+          <div class="bar-segment-label" style="width:10%;">Tr.</div>
+          <div class="bar-segment-label" style="width:70%;color:#A8D84E;">Teaching</div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="bottom-note">ERP functionality included as table-stakes. The AI modules are the product.</div>
-  <span class="slide-number">05</span>
+  <span class="slide-number" style="color:#6B6560;">05</span>
 </section>
 
-<!-- ════════════════ SLIDE 6 — Market Opportunity ════════════════ -->
+<!-- ════════════════ SLIDE 6 — The Outcome Chain ════════════════ -->
 <section class="slide-6" style="position:relative;">
-  <div class="left-col">
-    <div class="big-num">36,000</div>
-    <div class="big-label">CBSE City<br>Private Schools</div>
+  <h2>Efficiency isn't the product.<br>Outcomes are.</h2>
+
+  <div class="outcome-chain">
+    <div class="chain-block level-1">Better teacher<br>efficiency</div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-block level-2">Better student<br>performance</div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-block level-3">Better school<br>rating</div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-block level-4">Higher retention +<br>premium positioning</div>
   </div>
-  <div class="right-col">
-    <div class="funnel-bar">14.72L schools in India</div>
-    <div class="funnel-bar">22.5% are private</div>
-    <div class="funnel-bar">32,652 CBSE-affiliated</div>
-    <div class="funnel-bar">City Private · ₹2K–₹25K band</div>
+
+  <div class="outcome-metrics">
+    <div class="outcome-metric-group">
+      <h4>Student Performance</h4>
+      <p>Exam scores · Pass rates<br>Grade distribution</p>
+    </div>
+    <div class="outcome-metric-group">
+      <h4>Retention</h4>
+      <p>Re-enrolment % · Churn reduction<br>Parent NPS</p>
+    </div>
+    <div class="outcome-metric-group">
+      <h4>Reputation</h4>
+      <p>Admissions demand · Waitlist growth<br>Word-of-mouth</p>
+    </div>
   </div>
-  <div class="supporting" style="position:absolute;bottom:40px;right:80px;font-family:'Space Mono',monospace;font-size:13px;color:rgba(255,255,255,0.55);text-align:right;line-height:1.8;">
-    32.6% of student enrolment · 38% of teachers · 98L teachers nationally
-  </div>
+
+  <div class="bottom-note">These are the metrics owners buy. Not ₹6L in salary savings against ₹9Cr in fees.</div>
+
   <span class="slide-number" style="color:rgba(255,255,255,0.35);">06</span>
 </section>
 
-<!-- ════════════════ SLIDE 7 — The Sell ════════════════ -->
+<!-- ════════════════ SLIDE 7 — Proof Plan ════════════════ -->
 <section class="slide-7" style="position:relative;">
   <div class="accent-line-top"></div>
-  <h2>The Value Equation</h2>
-  <div class="insight-box">
-    Don't lead with salary savings. ₹6L/month in teacher costs is negligible against ₹9Cr in annual fees. Lead with outcomes.
+  <h2>What we will measure — and turn into ROI claims.</h2>
+
+  <div class="proof-cards">
+    <div class="proof-card">
+      <div class="proof-num">18 → 28+</div>
+      <div class="proof-label">Teaching minutes reclaimed</div>
+      <div class="proof-desc">Per 40-minute lesson. Baseline measured. Target validated in pilots.</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-num">−30%</div>
+      <div class="proof-label">Teacher after-hours time</div>
+      <div class="proof-desc">Messages + planning + marking. Measured via product logs + time diaries.</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-num">↑ Δ</div>
+      <div class="proof-label">Student outcome movement</div>
+      <div class="proof-desc">Exam performance or retention — school's choice. Measured over 2 terms.</div>
+    </div>
   </div>
-  <div class="value-chain">
-    <div class="value-step">Better teacher efficiency</div>
-    <div class="value-arrow">→</div>
-    <div class="value-step">Better student performance</div>
-    <div class="value-arrow">→</div>
-    <div class="value-step">Better school rating</div>
-    <div class="value-arrow">→</div>
-    <div class="value-step">Higher retention + premium positioning</div>
-  </div>
-  <div class="pricing-note" style="position:absolute;bottom:40px;left:80px;font-family:'DM Sans',sans-serif;font-size:14px;color:#6B6560;">
-    SaaS subscription per school · Tiered by size &amp; modules · ERP included · AI is the premium
-  </div>
+
+  <div class="proof-footer">All metrics validated via 12–20 school pilots. Instrumented measurement, not self-reporting.</div>
+
   <span class="slide-number">07</span>
 </section>
 
@@ -873,13 +987,8 @@
   <div class="brand">शिक्षा वेदम्</div>
   <div class="close-line1">The future of school operations</div>
   <div class="close-line2">is already here.</div>
-  <div class="close-stats">
-    <span>36,000 schools</span>
-    <span class="stat-sep">·</span>
-    <span>98L teachers</span>
-    <span class="stat-sep">·</span>
-    <span>₹0 in wasted time</span>
-  </div>
+  <div class="close-stats">18 → 28+ minutes. Every lesson. Every teacher. Every day.</div>
+  <div class="cta">Request a pilot · Book a demo</div>
   <div class="contact">[Name] · [email]</div>
   <span class="slide-number">08</span>
 </section>
