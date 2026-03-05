@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>ShikshaVedam — Pitch Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { margin: 0; padding: 0; background: #1A1A1A; font-family: 'DM Sans', sans-serif; }
+
+  section {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    page-break-after: always;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 32px;
+    right: 40px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #6B6560;
+  }
+
+  .accent-line-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: #1B8C4E;
+  }
+
+  /* ── Typography ── */
+  .headline { font-family: 'Playfair Display', serif; letter-spacing: -0.02em; line-height: 1.15; }
+  .label { font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.15em; }
+  .body-text { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; }
+  .mono { font-family: 'Space Mono', monospace; }
+
+  /* ── Print ── */
+  @media print {
+    section { page-break-after: always; }
+    body { margin: 0; background: white; }
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 1 — Title
+     ══════════════════════════════════════════ */
+  .slide-1 {
+    background: #1A1A1A;
+  }
+
+  .slide-1 .grid-bg {
+    position: absolute; inset: 0;
+    overflow: hidden;
+  }
+  .slide-1 .grid-bg svg { width: 100%; height: 100%; }
+
+  .slide-1 .brand {
+    position: absolute;
+    top: 48px; left: 80px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #1B8C4E;
+  }
+
+  .slide-1 .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    max-width: 620px;
+  }
+
+  .slide-1 .hero-text .line1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .slide-1 .hero-text .line2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #A8D84E;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+  .slide-1 .hero-text .line3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .slide-1 .subline {
+    position: absolute;
+    bottom: 48px; left: 80px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: #6B6560;
+  }
+
+  /* Isometric School Building */
+  .iso-school {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+    height: 380px;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 2 — The Problem
+     ══════════════════════════════════════════ */
+  .slide-2 {
+    background: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px;
+  }
+
+  .slide-2 .punch1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .slide-2 .punch1-accent {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: #A8D84E;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+
+  .slide-2 .time-row {
+    margin-top: 48px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    color: #6B6560;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .slide-2 .time-row span { white-space: nowrap; }
+  .slide-2 .time-sep { color: #333; }
+
+  .slide-2 .punch2 {
+    margin-top: 56px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    max-width: 680px;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 3 — Compliance Burden
+     ══════════════════════════════════════════ */
+  .slide-3 {
+    background: #F5F0E8;
+    display: flex;
+    padding: 80px;
+    gap: 60px;
+  }
+
+  .slide-3 .left-col {
+    flex: 0 0 38%;
+    padding-top: 40px;
+  }
+  .slide-3 .left-col h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #1A1A1A;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .slide-3 .left-col p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #6B6560;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  .slide-3 .right-col {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .doc-card {
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 16px 20px 16px 24px;
+    border-left: 5px solid #1B8C4E;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #1A1A1A;
+    position: relative;
+    margin-bottom: -4px;
+    width: 92%;
+  }
+  .doc-card:nth-child(1) { transform: rotate(-1.5deg); z-index: 5; margin-left: 0; }
+  .doc-card:nth-child(2) { transform: rotate(1deg); z-index: 4; margin-left: 16px; }
+  .doc-card:nth-child(3) { transform: rotate(-0.5deg); z-index: 3; margin-left: 8px; }
+  .doc-card:nth-child(4) { transform: rotate(1.5deg); z-index: 2; margin-left: 24px; }
+  .doc-card:nth-child(5) { transform: rotate(-1deg); z-index: 1; margin-left: 12px; }
+
+  .doc-card .doc-title { font-weight: 700; font-size: 14px; color: #0D5C2F; }
+  .doc-card .doc-meta { font-size: 12px; color: #6B6560; margin-top: 2px; }
+
+  .slide-3 .timeline-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 80px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #6B6560;
+  }
+  .timeline-segment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .timeline-dot {
+    width: 10px; height: 10px;
+    background: #1B8C4E;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .timeline-line {
+    width: 60px; height: 2px;
+    background: #CCC;
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 4 — Why ERPs Fail
+     ══════════════════════════════════════════ */
+  .slide-4 {
+    background: #FFFFFF;
+    padding: 80px;
+  }
+  .slide-4 h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #1A1A1A;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+    line-height: 1.2;
+  }
+
+  .slide-4 .comparison {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    height: 420px;
+  }
+
+  .slide-4 .comp-card {
+    flex: 1;
+    border-radius: 10px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide-4 .comp-card.existing {
+    background: #F0F0F0;
+  }
+  .slide-4 .comp-card.ours {
+    background: #F5F0E8;
+    border: 2px solid #1B8C4E;
+  }
+
+  .comp-card .comp-label {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    color: #6B6560;
+    margin-bottom: 12px;
+  }
+  .comp-card .comp-names {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+  }
+  .comp-card .comp-item {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 2;
+    color: #1A1A1A;
+  }
+  .comp-card .comp-item.yes { color: #1B8C4E; }
+  .comp-card .comp-item.no { color: #CC3333; }
+  .comp-card .comp-tag {
+    margin-top: auto;
+    padding-top: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #6B6560;
+  }
+  .comp-card.ours .comp-tag {
+    font-style: normal;
+    font-weight: 700;
+    color: #0D5C2F;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 5 — Our Solution
+     ══════════════════════════════════════════ */
+  .slide-5 {
+    background: #1A1A1A;
+    padding: 80px;
+    position: relative;
+  }
+
+  .slide-5 .geo-bg {
+    position: absolute; inset: 0; overflow: hidden; opacity: 0.12;
+  }
+
+  .slide-5 .section-label {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 14px;
+    color: #1B8C4E;
+    position: relative;
+    z-index: 1;
+  }
+
+  .slide-5 .modules {
+    display: flex;
+    gap: 24px;
+    margin-top: 36px;
+    position: relative;
+    z-index: 1;
+    height: 460px;
+  }
+
+  .module-card {
+    background: #222222;
+    border-radius: 10px;
+    padding: 32px 28px;
+    border-top: 4px solid #1B8C4E;
+    display: flex;
+    flex-direction: column;
+  }
+  .module-card:nth-child(1) { flex: 0 0 35%; }
+  .module-card:nth-child(2) { flex: 0 0 35%; }
+  .module-card:nth-child(3) { flex: 1; }
+
+  .module-card .mod-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: #6B6560;
+    margin-bottom: 8px;
+  }
+  .module-card .mod-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .module-card .mod-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #999;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .module-card .mod-metric {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #333;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    color: #A8D84E;
+    line-height: 1.4;
+  }
+
+  .slide-5 .bottom-note {
+    position: absolute;
+    bottom: 32px;
+    left: 80px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #6B6560;
+    z-index: 1;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 6 — Market Opportunity
+     ══════════════════════════════════════════ */
+  .slide-6 {
+    background: #0D5C2F;
+    display: flex;
+    padding: 80px;
+    gap: 80px;
+  }
+
+  .slide-6 .left-col {
+    flex: 0 0 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slide-6 .big-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 110px;
+    color: #A8D84E;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .slide-6 .big-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #FFFFFF;
+    margin-top: 12px;
+    line-height: 1.3;
+  }
+
+  .slide-6 .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .funnel-bar {
+    height: 52px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  .funnel-bar:nth-child(1) { width: 100%; background: rgba(255,255,255,0.12); }
+  .funnel-bar:nth-child(2) { width: 78%; background: rgba(255,255,255,0.18); }
+  .funnel-bar:nth-child(3) { width: 56%; background: rgba(255,255,255,0.25); }
+  .funnel-bar:nth-child(4) { width: 42%; background: #A8D84E; color: #0D5C2F; font-weight: 700; }
+
+  .slide-6 .supporting {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 7 — The Sell
+     ══════════════════════════════════════════ */
+  .slide-7 {
+    background: #F5F0E8;
+    padding: 80px;
+  }
+
+  .slide-7 h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #1A1A1A;
+    letter-spacing: -0.02em;
+  }
+
+  .slide-7 .insight-box {
+    margin-top: 40px;
+    background: #FFFFFF;
+    border-left: 5px solid #1B8C4E;
+    border-radius: 0 8px 8px 0;
+    padding: 28px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #1A1A1A;
+    line-height: 1.6;
+    max-width: 900px;
+  }
+
+  .slide-7 .value-chain {
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .value-step {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1A1A;
+    line-height: 1.4;
+    max-width: 220px;
+  }
+  .value-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    color: #1B8C4E;
+    padding: 0 20px;
+    flex-shrink: 0;
+  }
+
+  .slide-7 .pricing-note {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #6B6560;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 8 — Close
+     ══════════════════════════════════════════ */
+  .slide-8 {
+    background: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .slide-8 .geo-bg {
+    position: absolute; inset: 0; overflow: hidden; opacity: 0.08;
+  }
+
+  .slide-8 .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #1B8C4E;
+    position: relative; z-index: 1;
+  }
+  .slide-8 .close-line1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin-top: 28px;
+    position: relative; z-index: 1;
+  }
+  .slide-8 .close-line2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #A8D84E;
+    letter-spacing: -0.02em;
+    margin-top: 4px;
+    position: relative; z-index: 1;
+  }
+  .slide-8 .close-stats {
+    margin-top: 56px;
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    color: #FFFFFF;
+    position: relative; z-index: 1;
+    letter-spacing: 0.01em;
+  }
+  .slide-8 .close-stats .stat-sep { color: #6B6560; padding: 0 16px; }
+  .slide-8 .contact {
+    margin-top: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: #6B6560;
+    position: relative; z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ SLIDE 1 — Title ════════════════ -->
+<section class="slide-1">
+  <div class="grid-bg">
+    <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="perspGrid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#2A2A2A" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="1280" height="720" fill="url(#perspGrid)"/>
+      <!-- Perspective lines converging to right -->
+      <line x1="1280" y1="360" x2="0" y2="0" stroke="#2A2A2A" stroke-width="0.4"/>
+      <line x1="1280" y1="360" x2="0" y2="180" stroke="#2A2A2A" stroke-width="0.3"/>
+      <line x1="1280" y1="360" x2="0" y2="540" stroke="#2A2A2A" stroke-width="0.3"/>
+      <line x1="1280" y1="360" x2="0" y2="720" stroke="#2A2A2A" stroke-width="0.4"/>
+    </svg>
+  </div>
+  <div class="brand">शिक्षा वेदम्</div>
+  <div class="hero-text">
+    <div class="line1">Beyond ERP.</div>
+    <div class="line2">The AI Operating System</div>
+    <div class="line3">for India's Schools.</div>
+  </div>
+  <div class="subline">36,000 CBSE City Private Schools · ₹2K–₹25K/month fee band</div>
+
+  <!-- Isometric School Building — CSS/SVG -->
+  <div class="iso-school">
+    <svg width="420" height="380" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- Main building body - isometric -->
+      <g transform="translate(60, 60)">
+        <!-- Back wall -->
+        <path d="M 150 40 L 300 120 L 300 260 L 150 180 Z" fill="#E8E0D4" stroke="#D0C8BC" stroke-width="1"/>
+        <!-- Side wall -->
+        <path d="M 0 120 L 150 40 L 150 180 L 0 260 Z" fill="#F5F0E8" stroke="#D0C8BC" stroke-width="1"/>
+        <!-- Roof -->
+        <path d="M 0 120 L 150 40 L 300 120 L 150 200 Z" fill="#1B8C4E" stroke="#0D5C2F" stroke-width="1"/>
+        <!-- Roof ridge accent -->
+        <path d="M 75 80 L 150 40 L 225 80 L 150 120 Z" fill="#0D5C2F" opacity="0.4"/>
+
+        <!-- Windows on front wall -->
+        <rect x="25" y="150" width="28" height="35" rx="2" fill="#A8D84E" opacity="0.3" transform="skewY(-33.7)"/>
+        <rect x="65" y="150" width="28" height="35" rx="2" fill="#A8D84E" opacity="0.3" transform="skewY(-33.7)"/>
+        <rect x="105" y="150" width="28" height="35" rx="2" fill="#A8D84E" opacity="0.3" transform="skewY(-33.7)"/>
+
+        <!-- Door -->
+        <rect x="60" y="195" width="30" height="45" rx="2" fill="#0D5C2F" transform="skewY(-33.7)"/>
+
+        <!-- Second building block (wing) -->
+        <g transform="translate(-50, 80)">
+          <path d="M 0 60 L 100 20 L 200 60 L 100 100 Z" fill="#1B8C4E" stroke="#0D5C2F" stroke-width="1"/>
+          <path d="M 0 60 L 100 20 L 100 100 L 0 140 Z" fill="#F5F0E8" stroke="#D0C8BC" stroke-width="1"/>
+          <path d="M 100 20 L 200 60 L 200 140 L 100 100 Z" fill="#E8E0D4" stroke="#D0C8BC" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- AI network nodes -->
+      <circle cx="320" cy="80" r="5" fill="#A8D84E"/>
+      <circle cx="370" cy="130" r="4" fill="#A8D84E" opacity="0.7"/>
+      <circle cx="350" cy="60" r="3" fill="#A8D84E" opacity="0.5"/>
+      <circle cx="380" cy="90" r="3.5" fill="#A8D84E" opacity="0.6"/>
+      <circle cx="340" cy="180" r="4" fill="#A8D84E" opacity="0.5"/>
+      <circle cx="290" cy="50" r="3" fill="#A8D84E" opacity="0.4"/>
+      <circle cx="390" cy="160" r="3" fill="#A8D84E" opacity="0.4"/>
+
+      <!-- Connection lines -->
+      <line x1="320" y1="80" x2="370" y2="130" stroke="#A8D84E" stroke-width="0.8" opacity="0.4"/>
+      <line x1="320" y1="80" x2="350" y2="60" stroke="#A8D84E" stroke-width="0.8" opacity="0.3"/>
+      <line x1="370" y1="130" x2="380" y2="90" stroke="#A8D84E" stroke-width="0.8" opacity="0.3"/>
+      <line x1="370" y1="130" x2="340" y2="180" stroke="#A8D84E" stroke-width="0.8" opacity="0.3"/>
+      <line x1="350" y1="60" x2="380" y2="90" stroke="#A8D84E" stroke-width="0.8" opacity="0.3"/>
+      <line x1="320" y1="80" x2="290" y2="50" stroke="#A8D84E" stroke-width="0.8" opacity="0.25"/>
+      <line x1="340" y1="180" x2="390" y2="160" stroke="#A8D84E" stroke-width="0.8" opacity="0.25"/>
+      <line x1="380" y1="90" x2="390" y2="160" stroke="#A8D84E" stroke-width="0.8" opacity="0.2"/>
+
+      <!-- Connect network to building -->
+      <line x1="260" y1="120" x2="290" y2="50" stroke="#A8D84E" stroke-width="0.6" opacity="0.2" stroke-dasharray="4,4"/>
+      <line x1="270" y1="180" x2="340" y2="180" stroke="#A8D84E" stroke-width="0.6" opacity="0.2" stroke-dasharray="4,4"/>
+    </svg>
+  </div>
+
+  <span class="slide-number">01</span>
+</section>
+
+<!-- ════════════════ SLIDE 2 — The Problem ════════════════ -->
+<section class="slide-2">
+  <div class="punch1">Out of every 40-minute lesson,</div>
+  <div class="punch1-accent">only 18 minutes is teaching.</div>
+  <div class="time-row">
+    <span>2 min attendance</span><span class="time-sep">·</span>
+    <span>2 min recap</span><span class="time-sep">·</span>
+    <span>10 min walkthrough</span><span class="time-sep">·</span>
+    <span>5 min homework</span><span class="time-sep">·</span>
+    <span>3 min transition</span>
+  </div>
+  <div class="punch2">Management finds out about problems 12–24 months late.</div>
+  <span class="slide-number">02</span>
+</section>
+
+<!-- ════════════════ SLIDE 3 — Compliance Burden ════════════════ -->
+<section class="slide-3" style="position:relative;">
+  <div class="accent-line-top"></div>
+  <div class="left-col">
+    <h2>The Compliance Machine</h2>
+    <p>CBSE schools face double governance — state + CBSE. The paperwork never stops.</p>
+  </div>
+  <div class="right-col">
+    <div class="doc-card">
+      <div class="doc-title">UDISE+ DCF</div>
+      <div class="doc-meta">33 pages · 241+ mandatory fields</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-title">SQAA Framework</div>
+      <div class="doc-meta">84 standards · 336 marks · 6–8 month effort</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-title">Assessment Uploads</div>
+      <div class="doc-meta">Fixed window · No corrections allowed</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-title">Affiliation Renewal</div>
+      <div class="doc-meta">Annual cycle · Documentation intensive</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-title">State Recognition</div>
+      <div class="doc-meta">Recurring · Separate from CBSE</div>
+    </div>
+  </div>
+
+  <!-- Timeline bar -->
+  <div style="position:absolute; bottom:40px; left:80px; right:80px; display:flex; align-items:center; gap:12px;">
+    <span class="timeline-dot" style="width:10px;height:10px;background:#1B8C4E;border-radius:50%;flex-shrink:0;"></span>
+    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#6B6560;">Jan–Mar: UDISE+</span>
+    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
+    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#1B8C4E;font-weight:700;">→</span>
+    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
+    <span class="timeline-dot" style="width:10px;height:10px;background:#1B8C4E;border-radius:50%;flex-shrink:0;"></span>
+    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#6B6560;">Apr–Dec: SQAA</span>
+    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
+    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#1B8C4E;font-weight:700;">→</span>
+    <span style="width:40px;height:2px;background:#CCC;flex-shrink:0;"></span>
+    <span class="timeline-dot" style="width:10px;height:10px;background:#1B8C4E;border-radius:50%;flex-shrink:0;"></span>
+    <span style="font-family:'Space Mono',monospace;font-size:12px;color:#6B6560;">Jan–Feb: Uploads</span>
+  </div>
+
+  <span class="slide-number">03</span>
+</section>
+
+<!-- ════════════════ SLIDE 4 — Why ERPs Fail ════════════════ -->
+<section class="slide-4" style="position:relative;">
+  <div class="accent-line-top" style="background:transparent;"></div>
+  <h2>ERP is the entry ticket.<br>Not the product.</h2>
+  <div class="comparison">
+    <div class="comp-card existing">
+      <div class="comp-label">What Exists</div>
+      <div class="comp-names">Fedena · Teachmint · MyClassboard</div>
+      <div class="comp-item yes">Fee collection ✓</div>
+      <div class="comp-item yes">Attendance ✓</div>
+      <div class="comp-item yes">Report cards ✓</div>
+      <div style="height:16px"></div>
+      <div class="comp-item no">AI insights ✗</div>
+      <div class="comp-item no">Compliance automation ✗</div>
+      <div class="comp-item no">Communication intelligence ✗</div>
+      <div class="comp-item no">Teacher efficiency ✗</div>
+      <div class="comp-tag">Commoditized. Race to the bottom.</div>
+    </div>
+    <div class="comp-card ours">
+      <div class="comp-label">ShikshaVedam</div>
+      <div class="comp-names">AI-First School OS</div>
+      <div class="comp-item yes">Fee collection ✓</div>
+      <div class="comp-item yes">Attendance ✓</div>
+      <div class="comp-item yes">Report cards ✓</div>
+      <div style="height:16px"></div>
+      <div class="comp-item yes">CBSE workflow integration ✓</div>
+      <div class="comp-item yes">Principal dependency reduction ✓</div>
+      <div class="comp-item yes">Actionable AI insights ✓</div>
+      <div class="comp-item yes">Compliance automation ✓</div>
+      <div class="comp-tag">AI-first. Built for CBSE ops.</div>
+    </div>
+  </div>
+  <span class="slide-number">04</span>
+</section>
+
+<!-- ════════════════ SLIDE 5 — Our Solution ════════════════ -->
+<section class="slide-5">
+  <div class="geo-bg">
+    <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hexGrid" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+          <polygon points="30,2 56,15 56,37 30,50 4,37 4,15" fill="none" stroke="#FFF" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="1280" height="720" fill="url(#hexGrid)"/>
+    </svg>
+  </div>
+  <div class="section-label">Intelligent Governance</div>
+  <div class="modules">
+    <div class="module-card">
+      <div class="mod-num">01</div>
+      <div class="mod-title">Communication &amp; Flagging</div>
+      <div class="mod-body">AI priority routing. Every stakeholder sees only what's relevant. Parents, teachers, and management get filtered, actionable signals — not noise.</div>
+      <div class="mod-metric">12–24 mo → Real-time</div>
+    </div>
+    <div class="module-card">
+      <div class="mod-num">02</div>
+      <div class="mod-title">Teacher Efficiency Engine</div>
+      <div class="mod-body">AI curriculum planning: annual → monthly → weekly across 5–6 subjects. Optimises the 40-minute lesson by automating non-teaching tasks.</div>
+      <div class="mod-metric">18 min → 28+ min teaching</div>
+    </div>
+    <div class="module-card">
+      <div class="mod-num">03</div>
+      <div class="mod-title">Low-Friction Digitisation</div>
+      <div class="mod-body">Bridges paper to digital without adding workload. Phased rollout respects existing habits. Foundation that enables Modules 1 &amp; 2.</div>
+      <div class="mod-metric">Zero added teacher workload</div>
+    </div>
+  </div>
+  <div class="bottom-note">ERP functionality included as table-stakes. The AI modules are the product.</div>
+  <span class="slide-number">05</span>
+</section>
+
+<!-- ════════════════ SLIDE 6 — Market Opportunity ════════════════ -->
+<section class="slide-6" style="position:relative;">
+  <div class="left-col">
+    <div class="big-num">36,000</div>
+    <div class="big-label">CBSE City<br>Private Schools</div>
+  </div>
+  <div class="right-col">
+    <div class="funnel-bar">14.72L schools in India</div>
+    <div class="funnel-bar">22.5% are private</div>
+    <div class="funnel-bar">32,652 CBSE-affiliated</div>
+    <div class="funnel-bar">City Private · ₹2K–₹25K band</div>
+  </div>
+  <div class="supporting" style="position:absolute;bottom:40px;right:80px;font-family:'Space Mono',monospace;font-size:13px;color:rgba(255,255,255,0.55);text-align:right;line-height:1.8;">
+    32.6% of student enrolment · 38% of teachers · 98L teachers nationally
+  </div>
+  <span class="slide-number" style="color:rgba(255,255,255,0.35);">06</span>
+</section>
+
+<!-- ════════════════ SLIDE 7 — The Sell ════════════════ -->
+<section class="slide-7" style="position:relative;">
+  <div class="accent-line-top"></div>
+  <h2>The Value Equation</h2>
+  <div class="insight-box">
+    Don't lead with salary savings. ₹6L/month in teacher costs is negligible against ₹9Cr in annual fees. Lead with outcomes.
+  </div>
+  <div class="value-chain">
+    <div class="value-step">Better teacher efficiency</div>
+    <div class="value-arrow">→</div>
+    <div class="value-step">Better student performance</div>
+    <div class="value-arrow">→</div>
+    <div class="value-step">Better school rating</div>
+    <div class="value-arrow">→</div>
+    <div class="value-step">Higher retention + premium positioning</div>
+  </div>
+  <div class="pricing-note" style="position:absolute;bottom:40px;left:80px;font-family:'DM Sans',sans-serif;font-size:14px;color:#6B6560;">
+    SaaS subscription per school · Tiered by size &amp; modules · ERP included · AI is the premium
+  </div>
+  <span class="slide-number">07</span>
+</section>
+
+<!-- ════════════════ SLIDE 8 — Close ════════════════ -->
+<section class="slide-8">
+  <div class="geo-bg">
+    <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dotGrid2" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="20" cy="20" r="1" fill="#FFF"/>
+        </pattern>
+      </defs>
+      <rect width="1280" height="720" fill="url(#dotGrid2)"/>
+    </svg>
+  </div>
+  <div class="brand">शिक्षा वेदम्</div>
+  <div class="close-line1">The future of school operations</div>
+  <div class="close-line2">is already here.</div>
+  <div class="close-stats">
+    <span>36,000 schools</span>
+    <span class="stat-sep">·</span>
+    <span>98L teachers</span>
+    <span class="stat-sep">·</span>
+    <span>₹0 in wasted time</span>
+  </div>
+  <div class="contact">[Name] · [email]</div>
+  <span class="slide-number">08</span>
+</section>
+
+</body>
+</html>
